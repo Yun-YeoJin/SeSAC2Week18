@@ -13,6 +13,9 @@
 		AEF179D42911FCD4004C7591 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEF179D22911FCD4004C7591 /* Main.storyboard */; };
 		AEF179D62911FCD6004C7591 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEF179D52911FCD6004C7591 /* Assets.xcassets */; };
 		AEF179D92911FCD6004C7591 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEF179D72911FCD6004C7591 /* LaunchScreen.storyboard */; };
+		AEF179E229120A08004C7591 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = AEF179E129120A08004C7591 /* Alamofire */; };
+		AEF179E529120F08004C7591 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF179E429120F08004C7591 /* APIService.swift */; };
+		AEF179E729121BE5004C7591 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF179E629121BE5004C7591 /* EndPoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,8 @@
 		AEF179D52911FCD6004C7591 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AEF179D82911FCD6004C7591 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AEF179DA2911FCD6004C7591 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AEF179E429120F08004C7591 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		AEF179E629121BE5004C7591 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEF179E229120A08004C7591 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +62,7 @@
 		AEF179CB2911FCD4004C7591 /* SeSAC2Week18 */ = {
 			isa = PBXGroup;
 			children = (
+				AEF179E329120EFF004C7591 /* Network */,
 				AEF179CC2911FCD4004C7591 /* AppDelegate.swift */,
 				AEF179CE2911FCD4004C7591 /* SceneDelegate.swift */,
 				AEF179D02911FCD4004C7591 /* ViewController.swift */,
@@ -65,6 +72,15 @@
 				AEF179DA2911FCD6004C7591 /* Info.plist */,
 			);
 			path = SeSAC2Week18;
+			sourceTree = "<group>";
+		};
+		AEF179E329120EFF004C7591 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				AEF179E429120F08004C7591 /* APIService.swift */,
+				AEF179E629121BE5004C7591 /* EndPoint.swift */,
+			);
+			name = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +99,9 @@
 			dependencies = (
 			);
 			name = SeSAC2Week18;
+			packageProductDependencies = (
+				AEF179E129120A08004C7591 /* Alamofire */,
+			);
 			productName = SeSAC2Week18;
 			productReference = AEF179C92911FCD4004C7591 /* SeSAC2Week18.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +130,9 @@
 				Base,
 			);
 			mainGroup = AEF179C02911FCD4004C7591;
+			packageReferences = (
+				AEF179E029120A08004C7591 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = AEF179CA2911FCD4004C7591 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -140,6 +162,8 @@
 			files = (
 				AEF179D12911FCD4004C7591 /* ViewController.swift in Sources */,
 				AEF179CD2911FCD4004C7591 /* AppDelegate.swift in Sources */,
+				AEF179E729121BE5004C7591 /* EndPoint.swift in Sources */,
+				AEF179E529120F08004C7591 /* APIService.swift in Sources */,
 				AEF179CF2911FCD4004C7591 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,8 +317,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,9 +326,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = yeojin.SeSAC.SeSAC2Week18;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -321,8 +348,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -330,9 +357,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = yeojin.SeSAC.SeSAC2Week18;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -358,6 +388,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AEF179E029120A08004C7591 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AEF179E129120A08004C7591 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AEF179E029120A08004C7591 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AEF179C12911FCD4004C7591 /* Project object */;
 }
